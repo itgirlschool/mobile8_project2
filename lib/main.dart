@@ -59,12 +59,22 @@ class MyApp extends StatelessWidget{
                     ],
                   ),
                 ),
+                
+                Expanded(
+                  child: ListView(
+                    children: [
+                      Posts(),
+                      Posts(),
+                      Posts(),
+                      Posts(),
+
+                    ],
+                  ),
+                )
 
 
 
-                Posts(),
-                Posts(),
-
+                
 
 
               ],
