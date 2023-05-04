@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main_page.dart';
 import 'user_account.dart';
-import 'chat_page.dart';
+import 'screens/chat_page.dart';
 import 'search_screen.dart';
 
 void main() => runApp(const MyApp());
