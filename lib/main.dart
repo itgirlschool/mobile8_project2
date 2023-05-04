@@ -1,140 +1,75 @@
 import 'package:flutter/material.dart';
+import 'main_page.dart';
+import 'user_account.dart';
+import 'chat_page.dart';
+import 'search_screen.dart';
 
-void main() {
-  runApp(
-      MyApp()
-  );
-}
-final List people = ['person 1', 'person 2', 'person 3', 'person 4', 'person 5', 'person 6', 'person 7'];
+void main() => runApp(const MyApp());
 
-class Stories extends StatelessWidget {
-  const Stories({Key? key}) : super(key: key);
-
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10.0),
-      child: Column(
-        children: [
-          Container(
-            margin: EdgeInsets.fromLTRB(8,60,8,0),
-            width: 70,
-            height: 70,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.grey.shade200,
-            ),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyStatefulWidget(),
+    );
+  }
+}
+
+class MyStatefulWidget extends StatefulWidget {
+  const MyStatefulWidget({super.key});
+
+  @override
+  State<MyStatefulWidget> createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  int _selectedIndex = 0;
+  static List<Widget> _widgetOptions = <Widget>[
+    MainPage(),
+    ChatPage(),
+    SearchScreen(),
+    UserAccount(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: Colors.black,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.domain_verification),
+            label: 'главная',
           ),
-          Text("name")
+          BottomNavigationBarItem(
+            icon: Icon(Icons.chat_rounded),
+            label: 'чаты',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.manage_search),
+            label: 'поиск',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'профиль',
+          ),
         ],
-      ),);
-  }
-}
-
-
-
-class MyApp extends StatelessWidget{
-  @override
-  Widget build (BuildContext context) {
-    return
-      MaterialApp(
-        home: Scaffold(
-            backgroundColor: Colors.white,
-            body: Column(
-              children: [
-                Container(
-                  height: 170,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      Stories(),
-                      Stories(),
-                      Stories(),
-                      Stories(),
-                      Stories(),
-                      Stories(),
-
-
-                    ],
-                  ),
-                ),
-                
-                Expanded(
-                  child: ListView(
-                    children: [
-                      Posts(),
-                      Posts(),
-                      Posts(),
-                      Posts(),
-
-                    ],
-                  ),
-                )
-
-
-
-                
-
-
-              ],
-            )
-
-
-        ),
-      );
-
-
-  }
-}
-
-class Posts extends StatelessWidget {
-  const Posts({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            children: [
-              Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.grey,
-                    shape: BoxShape.circle
-                ),
-              ),
-              SizedBox(
-                height: 10,
-                width: 10,
-              ),
-
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text("name",
-                    style: TextStyle(fontWeight: FontWeight.bold),),
-                  Text("Теннис", style: TextStyle(fontSize: 10),),
-                  Text("20 апреля 2023",
-                    style: TextStyle(fontSize: 10),)
-                ],
-              ),
-            ],
-
-          ),
-        ),
-        SizedBox(
-          height: 10,
-          width: 10,
-        ),
-        Container(
-          height: 300,
-          color: Colors.grey,
-        ),
-      ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Color.fromARGB(255, 109, 68, 191),
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
