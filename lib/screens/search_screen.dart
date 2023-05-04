@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_sportchat/models/recommended_model.dart';
-import 'package:project_sportchat/widgets/header_with_search_box.dart';
-import 'package:project_sportchat/widgets/recommended_list.dart';
-import '../consts.dart';
+import '../constants.dart';
+import '../models/recommended_model.dart';
+import '../widgets/header_with_search_box.dart';
+import '../widgets/recommended_list.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
