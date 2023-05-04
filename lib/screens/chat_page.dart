@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:project_sportchat/models/chat_users_model.dart';
-import 'package:project_sportchat/widgets/chat_list.dart';
-import '../consts.dart';
-import 'package:project_sportchat/widgets/header_with_search_box.dart';
+import 'package:mobile8_project2/widgets/chat_list.dart';
+import 'package:mobile8_project2/widgets/header_with_search_box.dart';
+import '../constants.dart';
+import '../models/chat_users_model.dart';
 
 class ChatPage extends StatefulWidget {
   @override
