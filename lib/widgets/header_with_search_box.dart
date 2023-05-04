@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile8_project2/constants.dart' as Constants;
+import '../constants.dart';
 
 class HeaderWithSearchBox extends StatelessWidget {
   const HeaderWithSearchBox({
