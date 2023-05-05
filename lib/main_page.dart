@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mobile8_project2/widgets/header_no_search_box.dart';
+
 
 final List people = [
   'person 1',
@@ -44,33 +46,36 @@ class MainPage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
           backgroundColor: Colors.white,
-          body: Column(
-            children: [
-              Container(
-                height: 170,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: const [
-                    Stories(),
-                    Stories(),
-                    Stories(),
-                    Stories(),
-                    Stories(),
-                    Stories(),
-                  ],
+          body: SafeArea(
+            child: Column(
+              children: [
+                HeaderNoSearchBox(screenTitle: "Главная"),
+                Container(
+                  height: 170,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: const [
+                      Stories(),
+                      Stories(),
+                      Stories(),
+                      Stories(),
+                      Stories(),
+                      Stories(),
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(
-                child: ListView(
-                  children: const [
-                    Posts(),
-                    Posts(),
-                    Posts(),
-                    Posts(),
-                  ],
-                ),
-              )
-            ],
+                Expanded(
+                  child: ListView(
+                    children: const [
+                      Posts(),
+                      Posts(),
+                      Posts(),
+                      Posts(),
+                    ],
+                  ),
+                )
+              ],
+            ),
           )),
     );
   }

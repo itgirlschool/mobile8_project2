@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'main_page.dart';
 import 'user_account.dart';
 import 'screens/chat_page.dart';
-import 'search_screen.dart';
+import 'screens/search_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -28,6 +28,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
+
     MainPage(),
     ChatPage(),
     SearchScreen(),
