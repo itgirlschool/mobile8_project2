@@ -4,7 +4,8 @@ import 'main_page.dart';
 import 'user_account.dart';
 import 'screens/chat_page.dart';
 import 'screens/search_screen.dart';
-
+// import 'signup_sreen.dart';
+import 'package:mobile8_project2/screens/for_registration_screen.dart';
 
 void main() => runApp(const MyApp());
 
