@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile8_project2/screens/signup_screen.dart ';
-
+import 'package:mobile8_project2/screens/signup_screen.dart';
 
 class Registration extends StatefulWidget {
   Registration({Key? key}) : super(key: key);
@@ -20,8 +19,12 @@ class _RegistrationState extends State<Registration> {
               height: 12,
             ),
             Expanded(
-              child: Container (child: Image(
-                  image: AssetImage('assets/images/imageForRegistrationScreen.jpg'), height: 200),),
+              child: Container(
+                child: Image(
+                    image: AssetImage(
+                        'assets/images/imageForRegistrationScreen.jpg'),
+                    height: 200),
+              ),
             ),
             const SizedBox(
               height: 12,
@@ -38,9 +41,13 @@ class _RegistrationState extends State<Registration> {
             Center(
               child: Text(
                 "Узнавайте о спортивных турнирах в вашем городе, "
-                    "\nнаходите единомышленников, "
-                    "\nобщайтесь с другими спортсменами",  textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.w700,),
+                "\nнаходите единомышленников, "
+                "\nобщайтесь с другими спортсменами",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
             ),
             const SizedBox(
@@ -49,7 +56,8 @@ class _RegistrationState extends State<Registration> {
             ElevatedButton(
               style: ButtonStyle(
                 elevation: MaterialStateProperty.all<double>(10.0),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.purple),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.purple),
                 minimumSize: MaterialStateProperty.all(Size(100, 50)),
               ),
               child: Text("Зарегистрироваться"),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'user_data.dart';
-import 'user_repository.dart';
+import 'package:mobile8_project2/widgets/user_data.dart';
+import 'package:mobile8_project2/widgets/user_repository.dart';
+
 import 'for_registration_screen.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -120,7 +121,10 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     Flexible(
                       flex: 30,
-                      child: Text('ВЫБЕРИТЕ \nВИД СПОРТА', style: TextStyle(fontWeight: FontWeight.w500),),
+                      child: Text(
+                        'ВЫБЕРИТЕ \nВИД СПОРТА',
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
                     ),
                     const SizedBox(
                       width: 10,

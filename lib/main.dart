@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mobile8_project2/screens/signup_screen.dart';
 import 'main_page.dart';
 import 'user_account.dart';
 import 'screens/chat_page.dart';
 import 'screens/search_screen.dart';
-import 'signup_sreen.dart';
-import 'for_registration_screen.dart';
 
 
 void main() => runApp(const MyApp());
