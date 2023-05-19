@@ -3,6 +3,9 @@ import 'main_page.dart';
 import 'user_account.dart';
 import 'screens/chat_page.dart';
 import 'screens/search_screen.dart';
+import 'signup_sreen.dart';
+import 'for_registration_screen.dart';
+
 
 void main() => runApp(const MyApp());
 
@@ -30,6 +33,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   static List<Widget> _widgetOptions = <Widget>[
 
     MainPage(),
+    SignupScreen(),
     ChatPage(),
     SearchScreen(),
     UserAccount(),
